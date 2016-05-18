@@ -118,6 +118,9 @@ mod.directive('infiniteScroll', [
             unregisterEventListener();
             return unregisterEventListener = null;
           }
+          if (checkInterval) {
+            $interval.cancel(checkInterval);
+          }
         });
         handleInfiniteScrollDistance = function(v) {
           return scrollDistance = parseFloat(v) || 0;
